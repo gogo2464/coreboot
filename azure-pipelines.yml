@@ -30,7 +30,7 @@ jobs:
   - script: |
       echo let us wait until cargo fix or rustfix actually works make --keep-going clippy
     displayName: 'SKIP clippy linter'
-  - script: |
+  - script: |v
       make --keep-going mainboards
     displayName: 'Build all mainboards'
   - script: |
@@ -149,3 +149,9 @@ jobs:
         grep "Running payload" serial
       )
     displayName: 'Run test'
+    
+- job: PublishCodeCoverageResults@1
+  - script: |
+    sudo apt install libssl-dev;
+    cargo install cargo-tarpaulin;
+  displayName: 'install Tarpualin dependencies'
