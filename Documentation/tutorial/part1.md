@@ -15,7 +15,7 @@ Download, configure, and build coreboot
     $ sudo dnf install git make gcc-gnat flex bison xz bzip2 gcc g++ ncurses-devel wget zlib-devel patch
 
 ### Step 2 - Download coreboot source tree
-    $ git clone https://review.coreboot.org/coreboot
+    $ git clone --recurse-submodules https://review.coreboot.org/coreboot
     $ cd coreboot
 
 ### Step 3 - Build the coreboot toolchain
